@@ -1,4 +1,6 @@
-const allUserData = require('../data');
+if(typeof module !== 'undefined') {
+  var allUserData = require('../data/userData');
+}
 
 class UserRepository {
   constructor(dataFilepath) {
@@ -22,4 +24,7 @@ class UserRepository {
     // split? how do we grab just state
   }
 }
-module.exports = UserRepository;
+
+if(typeof module !== 'undefined') {
+  module.exports = UserRepository;
+}

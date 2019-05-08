@@ -1,13 +1,19 @@
-const userData = require('../data/userData');
+if(typeof module !== 'undefined') {
+  var userData = require('../data/userData');
+}
 
 class User {
   constructor(userData) {
     this.userData = userData;
+    this.id = userData.id;
+    this.name = userData.name;
   }
 
   returnName() {
-    // filter over array to find the object containing the key id
-    // match value to user id value
+    return this.name.split(' ')[0];
   }
 }
+
+if(typeof module !== 'undefined') {
   module.exports = User;
+}

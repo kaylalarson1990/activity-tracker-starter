@@ -1,4 +1,6 @@
-const sleepData = require('../data/sleepData');
+if(typeof module !== 'undefined') {
+  var sleepData = require('../data/sleepData');
+}
 
 class Sleep {
   constructor(id) {
@@ -38,9 +40,12 @@ class Sleep {
 // quality per day for a span of 7 days -- same, refactor functionality for quality per day to accept a single date or range
 
 // custom metric!
-
 }
-module.exports = Sleep;
+
+if(typeof module !== 'undefined') {
+  module.exports = Sleep;
+}
+
 
 
 

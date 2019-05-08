@@ -1,4 +1,6 @@
-const hydrationData = require('../data/hydrationData');
+if(typeof module !== 'undefined') {
+  var hydrationData = require('../data/hydrationData');
+}
 
 class Hydration {
   constructor(id) {
@@ -15,4 +17,7 @@ class Hydration {
     // probaby reduce over array for keys matching start and end dates accumulating all values for key numOunces between start and end
   }
 }
-module.exports = Hydration;
+
+if(typeof module !== 'undefined') {
+  module.exports = Hydration;
+}

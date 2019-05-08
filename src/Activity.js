@@ -1,4 +1,6 @@
-const activityData = require('../data/activityData');
+if(typeof module !== 'undefined') {
+  var activityData = require('../data/activityData');
+}
 
 class Activity {
   constructor(id) {
@@ -45,10 +47,12 @@ class Activity {
   }
 
   // quality per day for a span of 7 days -- same, refactor functionality for quality per day to accept a single date or range
-
-
 }
-module.exports = Activity;
+
+if(typeof module !== 'undefined') {
+  module.exports = Activity;
+}
+
 
 // ******** do these live in UserRepo?
 // For all users, the average sleep quality
