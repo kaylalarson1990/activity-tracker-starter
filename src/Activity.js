@@ -49,7 +49,7 @@ class Activity {
   // quality per day for a span of 7 days -- same, refactor functionality for quality per day to accept a single date or range
 }
 
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Activity;
 }
 
