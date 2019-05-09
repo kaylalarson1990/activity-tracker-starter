@@ -6,7 +6,7 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 
-describe('UserRepository ', function() {
+describe('UserRepository', function() {
   let userRepo;
   beforeEach(function() {
     userRepo = new UserRepository(testData);

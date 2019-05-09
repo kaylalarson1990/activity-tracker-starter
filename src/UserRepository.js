@@ -4,10 +4,10 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 class UserRepository {
-  constructor(allUserData, id) {
+  constructor(allUserData) {
     this.allUserData = allUserData;
     this.newUser = new User(this.makeAUser);
-    this.id = id;
+    this.id = allUserData.id;
   }
 
   makeAUser () {
