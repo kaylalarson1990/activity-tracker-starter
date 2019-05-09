@@ -3,7 +3,7 @@ if(typeof module !== 'undefined') {
 }
 
 class UserRepository {
-  constructor(dataFilepath) {
+  constructor(allUserData) {
     this.allUserData = allUserData;
   }
 
@@ -25,6 +25,6 @@ class UserRepository {
   }
 }
 
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = UserRepository;
 }

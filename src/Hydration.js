@@ -18,6 +18,6 @@ class Hydration {
   }
 }
 
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Hydration;
 }

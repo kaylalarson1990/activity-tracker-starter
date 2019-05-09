@@ -42,7 +42,7 @@ class Sleep {
 // custom metric!
 }
 
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Sleep;
 }
 
