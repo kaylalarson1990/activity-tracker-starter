@@ -1,4 +1,4 @@
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var activityData = require('../data/activityData');
 }
 

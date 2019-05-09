@@ -1,8 +1,10 @@
-const expect = require('chai').expect;
-const UserRepository = require('../src/UserRepository.js');
-const testData = require('../data/testData');
-// const testUser = require('../data/testObj')
-const User = require('../src/User.js');
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  var expect = require('chai').expect;
+  var UserRepository = require('../src/UserRepository.js');
+  var testData = require('../data/testData');
+  var User = require('../src/User.js');
+}
+
 
 describe('UserRepository ', function() {
   let userRepo;
@@ -23,6 +25,20 @@ describe('UserRepository ', function() {
     expect(user).to.be.an.instanceOf(User);
   });
 
+  it('should find a user id', function () {
+    const testData = {
+    "id": 37,
+    "name": "Rupert Cartwright",
+    "address": "765 Camden Mountains, Homenickhaven ME 37933",
+    "email": "Raphael80@hotmail.com",
+    "strideLength": 4.9,
+    "dailyStepGoal": 10000
+  }
+    let user = new User(testData);
+    userRepo.makeAUser();
+    expect(user.id).to.equal(37);
+  })
+
   it('should average all users goal steps', function() {
     let steps = userRepo.avgGoalSteps();
     expect(steps).to.equal(6960);
@@ -30,6 +46,6 @@ describe('UserRepository ', function() {
 
   it('should find the most common state', function() {
     let state = userRepo.commonState();
-  })
-
+    expect(state).to.equal("NM");
+  });
 });

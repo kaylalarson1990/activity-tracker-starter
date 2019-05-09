@@ -4582,10 +4582,10 @@ const testAllActivity = [
     ]
   }
 ]
-  
 
-
-module.exports = testData;
-module.exports = testAllSleep;
-module.exports = testAllHydrate;
-module.exports = testAllActivity;
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = testData;
+  module.exports = testAllSleep;
+  module.exports = testAllHydrate;
+  module.exports = testAllActivity;
+}

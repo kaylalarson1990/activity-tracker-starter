@@ -1,16 +1,17 @@
-if(typeof module !== 'undefined') {
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var allUserData = require('../data/userData');
   var User = require('./User');
 }
 
 class UserRepository {
-  constructor(allUserData) {
+  constructor(allUserData, id) {
     this.allUserData = allUserData;
     this.newUser = new User(this.makeAUser);
+    this.id = id;
   }
 
   makeAUser () {
-    return allUserData.filter(user => user.id === 37);
+    return allUserData.filter(user => user.id === this.id);
   }
 
   avgGoalSteps() {
@@ -20,13 +21,19 @@ class UserRepository {
   }
 
   commonState() {
-    // addresses = original array map to return just addresses
-    // split addresses at each words
-    // states = reduce over addresses acc, state 
-    // syntax for getting each at index words.length - 1, []
-    // over states, sort then filter then pop
+    let findStates = allUserData.map(user => user.address.split(' ')[user.address.split(' ').length - 2]);
+    let addStates = findStates.reduce((acc, state) => {
+      if(!acc[state]) {
+        acc[state] = 1;
+      } else {
+        acc[state]++;
+      }
+      return acc;
+    }, {});
+    let sortStates = Object.entries(addStates).sort((a, b) => a[1] - b[1]).pop()[0];
+    return sortStates;
+    }
   }
-}
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = UserRepository;
