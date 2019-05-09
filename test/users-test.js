@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const User = require('../src/User.js');
-const testData = require('../data/testData');
+const testData = require('../data/testObj');
 
 describe('User information', function() {
   let user;

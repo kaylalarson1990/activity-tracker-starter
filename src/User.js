@@ -1,5 +1,6 @@
 if(typeof module !== 'undefined') {
   var userData = require('../data/userData');
+  var hydrationRepo = require('../src/HydrationRepository')
 }
 
 class User {
@@ -11,6 +12,10 @@ class User {
 
   returnName() {
     return this.name.split(' ')[0];
+  }
+
+  getHydration() {
+    hydrationRepo = new HydrationRepository(this.id);
   }
 }
 
