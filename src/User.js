@@ -1,5 +1,5 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var userData = require('../data/userData');
+  var userTestData = require('../data/userData');
   var hydrationRepo = require('../src/HydrationRepository')
 }
 

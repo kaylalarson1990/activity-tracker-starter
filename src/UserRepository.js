@@ -10,7 +10,7 @@ class UserRepository {
     this.id = allUserData.id;
   }
 
-  makeAUser () {
+  makeAUser() {
     return allUserData.filter(user => user.id === this.id);
   }
 

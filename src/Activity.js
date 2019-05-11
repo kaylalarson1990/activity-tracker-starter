@@ -1,5 +1,5 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var activityData = require('../data/activityData');
+  var activityTestData = require('../data/activityData');
 }
 
 class Activity {

@@ -1525,8 +1525,9 @@ const testActivity = {
   ]
 }
 
-
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = testUser;
   module.exports = testHydrate;
   module.exports = testSleep;
   module.exports = testActivity;
+}
