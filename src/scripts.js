@@ -1,14 +1,26 @@
-const changeUserName = document.querySelector("#user-name");
-const activeMinPer = document.querySelector(".active-minutes");
-const sleepHoursPer = document.querySelector(".sleep-hours");
-const totalStepsPer = document.querySelector(".total-steps");
-const toggleUserInfo = document.querySelector(".toggle-user-info");
-const fullName = document.querySelector("#name");
-const address = document.querySelector("#address");
-const email = document.querySelector("#email");
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  UserRepository = require('./UserRepository')
+}
 
-function addUserFirstName() {
-  
+let changeUserName = document.querySelector("#user-name");
+let activeMinPer = document.querySelector(".active-minutes");
+let sleepHoursPer = document.querySelector(".sleep-hours");
+let totalStepsPer = document.querySelector(".total-steps");
+let toggleUserInfo = document.querySelector(".toggle-user-info");
+let fullName = document.querySelector("#name");
+let address = document.querySelector("#address");
+let email = document.querySelector("#email");
+$(document).ready(() => {
+  loadUserRepo();
+})
+
+function loadUserRepo() {
+  let userRepo = new UserRepository();
+  console.log('new userrepo: ', userRepo);
+}
+
+function addUserFirstName(user) {
+  $("#user-name").text()
 }
 
 

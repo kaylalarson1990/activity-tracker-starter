@@ -1,17 +1,18 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var allUserData = require('../data/userData');
-  var User = require('./User');
+  userData = require('../data/userData');
+  User = require('./User');
 }
 
 class UserRepository {
-  constructor(allUserData) {
-    this.allUserData = allUserData;
-    this.newUser = new User(this.makeAUser);
-    this.id = allUserData.id;
+  constructor() {
+    this.allUserData = userData;
+    this.newUser = new User(this.makeAUser());
+    this.id = this.newUser.id;
   }
 
   makeAUser() {
-    return allUserData.filter(user => user.id === this.id);
+    let ourUser = this.allUserData[Math.floor(Math.random() * this.allUserData.length)];
+    addUserFirstName(this.newUser.name);
   }
 
   avgGoalSteps() {
