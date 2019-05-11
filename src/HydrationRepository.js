@@ -1,6 +1,6 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var hydrationTestData = require('../data/hydrationData');
-  var Hydration = require('./Hydration');
+  Hydration = require('./Hydration');
 }
 
 class HydrationRepository {
