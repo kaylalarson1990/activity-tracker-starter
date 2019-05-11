@@ -12,7 +12,8 @@ class UserRepository {
 
   makeAUser() {
     let ourUser = this.allUserData[Math.floor(Math.random() * this.allUserData.length)];
-    addUserFirstName(this.newUser.name);
+    // returnName(ourUser);
+    return ourUser;
   }
 
   avgGoalSteps() {
