@@ -11,19 +11,17 @@ class UserRepository {
   }
 
   makeAUser() {
-    let ourUser = this.allUserData[Math.floor(Math.random() * this.allUserData.length)];
-    // returnName(ourUser);
-    return ourUser;
+    return this.allUserData[Math.floor(Math.random() * this.allUserData.length)];
   }
 
   avgGoalSteps() {
-    let steps = allUserData.map(a => a.dailyStepGoal);
+    let steps = this.allUserData.map(a => a.dailyStepGoal);
     let avgStepGoal = Math.floor(steps.reduce((acc, user) => acc + user, 0) / steps.length);
     return avgStepGoal;
   }
 
   commonState() {
-    let findStates = allUserData.map(user => user.address.split(' ')[user.address.split(' ').length - 2]);
+    let findStates = this.allUserData.map(user => user.address.split(' ')[user.address.split(' ').length - 2]);
     let addStates = findStates.reduce((acc, state) => {
       if(!acc[state]) {
         acc[state] = 1;

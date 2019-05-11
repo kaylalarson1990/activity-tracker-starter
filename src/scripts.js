@@ -14,10 +14,15 @@ let email = document.querySelector("#email");
 $(document).ready(() => {
   const userRepo = new UserRepository();
     console.log('new userrepo: ', userRepo);
-    addUserFirstName();
+    loadUserData();
 
-  function addUserFirstName(user) {
+  function loadUserData(user) {
     $('#user-name').text(userRepo.newUser.returnName());
+    $('#name').text(userRepo.newUser.name);
+    $('#address').text(userRepo.newUser.userData.address);
+    $('#email').text(userRepo.newUser.userData.email);
+    $('#user-step-goal').text(userRepo.newUser.userData.dailyStepGoal);
+    $('#avg-step-goal').text(userRepo.avgGoalSteps());
   };
 });
 
