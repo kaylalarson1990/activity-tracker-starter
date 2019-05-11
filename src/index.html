@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
   <body>
     <header>
@@ -16,11 +18,12 @@
         <h1>Welcome Back, <span id="user-name"></span>!</h1>
       </container>
       <container class="fitlit-logo">
-        <h2>FitLit</h2>
+        <h2>Fit<i class="fas fa-fire"></i>Lit</h2>
       </container>
     </header>
-    <container class="toggle-user-info">
-      <p class="user-info">Full Name: <span id="name"></span></p>
+    <container class="toggle" id="info-arrow"><i class="fas fa-cog"></i></container>
+    <container class="user-info-card">
+      <p class="user-info">Name: <span id="name"></span></p>
       <p class="user-info">Address: <span id="address"></span></p>
       <p class="user-info">Email: <span id="email"></span></p>
     </container>

@@ -17,6 +17,10 @@ $(document).ready(() => {
     loadUserData();
 
   function loadUserData(user) {
+    $('#info-arrow').click(function () {
+      $('.user-info-card').toggle();
+    });
+    
     $('#user-name').text(userRepo.newUser.returnName());
     $('#name').text(userRepo.newUser.name);
     $('#address').text(userRepo.newUser.userData.address);
@@ -25,7 +29,4 @@ $(document).ready(() => {
     $('#avg-step-goal').text(userRepo.avgGoalSteps());
   };
 });
-
-
-
 
