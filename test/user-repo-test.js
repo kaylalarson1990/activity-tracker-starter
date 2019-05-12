@@ -20,10 +20,10 @@ describe('UserRepository', function() {
     expect(userRepo).to.be.an.instanceof(UserRepository);
   });
 
-  it('should make a new user', function () {
-    let user = new User(userRepo.makeAUser);
-    expect(user).to.be.an.instanceOf(User);
-  });
+  // it('should make a new user', function () {
+  //   let user = new User(userRepo.makeAUser);
+  //   expect(user).to.be.an.instanceOf(User);
+  // });
 
   it('should find a user id', function () {
     const testData = {

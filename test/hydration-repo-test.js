@@ -16,7 +16,7 @@ describe('HydrationRepository', function() {
   });
 
   it('should find an id', function() {
-    const testID = 37
+    const testID = 37;
     hydrationRepo.getUserHydration(testID);
     expect(hydrationRepo.id).to.equal(37);
   });

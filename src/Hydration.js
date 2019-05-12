@@ -1,20 +1,29 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var hydrationTestData = require('../data/hydrationData');
+  // hydrationData = require('../data/hydrationData');
 }
 
 class Hydration {
-  constructor(id) {
-    this.id = id;
+  constructor(hydroData) {
+    this.hydroData = hydroData;
+    this.id = hydroData.userID;
+    this.dailyOunces = 0;
+    this.weeklyOunces = 0;
   }
 
-  ouncesPerDate() {
-    // object.key[date].find to match specific date dd/mm/yyyy
-    // return value for key numOunces
+  ouncesPerDate(day) {
+    return this.hydroData.hydrationData.find(dates => {
+      if(dates.date === day) {
+        this.dailyOunces = dates.numOunces;
+      }
+    });
   }
 
-  ouncesPerWeek() {
-    // accept date start and date finish
-    // probaby reduce over array for keys matching start and end dates accumulating all values for key numOunces between start and end
+  ouncesPerWeek(firstDay) {
+    let startIndex = this.hydroData.hydrationData.findIndex(startDay => startDay.date === firstDay)
+    return this.weeklyOunces = this.hydroData.hydrationData.slice(startIndex, startIndex + 7).reduce((acc, dates) => {
+          acc += dates.numOunces;
+      return acc;
+    }, 0);
   }
 }
 

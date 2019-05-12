@@ -1,12 +1,17 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var userTestData = require('../data/userData');
-  var hydrationRepo = require('../src/HydrationRepository')
+  // userData = require('../data/userData');
+   HydrationRepository = require('../src/HydrationRepository')
+   // SleepRepository = require('../src/SleepRepository');
+   // ActivityRepository = require('../src/ActivityRepository');
 }
 
 class User {
   constructor(userData) {
     this.userData = userData;
     this.id = userData.id;
+    this.newHydrationRepo = new HydrationRepository(this.id);
+    // this.newActivityRepo = new ActivityRepository(this.id);
+    // this.newSleepRepo = new SleepRepository(this.id);
     this.name = userData.name;
   }
 
@@ -14,10 +19,7 @@ class User {
     return this.name.split(' ')[0];
   }
 
-  getHydration() {
-    hydrationRepo = new HydrationRepository(this.id);
   }
-}
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = User;

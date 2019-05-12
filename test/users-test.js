@@ -1,6 +1,8 @@
-const expect = require('chai').expect;
-const User = require('../src/User.js');
-const testData = require('../data/testObj');
+if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  var expect = require('chai').expect;
+  var User = require('../src/User.js');
+  var testData = require('../data/testObj');
+}
 
 describe('User information', function() {
   let user;
