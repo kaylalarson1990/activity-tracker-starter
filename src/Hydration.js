@@ -1,20 +1,21 @@
-if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  // hydrationData = require('../data/hydrationData');
-}
+// if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  
+// }
 
 class Hydration {
   constructor(hydroData) {
     this.hydroData = hydroData;
-    this.id = hydroData.userID;
-    this.dailyOunces = 0;
+    console.log('hydro', hydroData);
+    // this.id = hydroData.userID;
+    // this.dailyOunces = 0;
     this.weeklyOunces = 0;
   }
 
   ouncesPerDate(day) {
     return this.hydroData.hydrationData.find(dates => {
-      if(dates.date === day) {
-        this.dailyOunces = dates.numOunces;
-      }
+      if(dates.date == day) {
+        return dates.numOunces;
+      } 
     });
   }
 

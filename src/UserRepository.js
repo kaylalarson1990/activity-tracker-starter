@@ -4,14 +4,15 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 class UserRepository {
-  constructor() {
+  constructor(singleUserId) {
     this.allUserData = userData;
     this.newUser = new User(this.makeAUser());
-    this.id = this.newUser.id;
+    // console.log(this.newUser)
+    // this.id = this.newUser.id;
   }
 
-  makeAUser() {
-    return this.allUserData[Math.floor(Math.random() * this.allUserData.length)];
+  makeAUser(singleUserId) {
+    return this.allUserData.find(user => user.userID === singleUserId);
   }
 
   avgGoalSteps() {

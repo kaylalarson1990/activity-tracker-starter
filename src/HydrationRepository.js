@@ -4,13 +4,15 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 class HydrationRepository {
-  constructor(id) {
-    this.id = id;
+  constructor(singleUserId) {
+    this.hydroData = hydrationData;
+    console.log(this.hydroData);
     this.newHydration = new Hydration(this.getUserHydration());
+    // this.id = this.newHydration.userID;
   }
 
-  getUserHydration() {
-    return hydrationData.find(user => user.userID === this.id);
+  getUserHydration(singleUserId) {
+    return this.hydroData.find(user => user.userID === singleUserId);
   }
 }
 

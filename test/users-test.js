@@ -26,10 +26,6 @@ describe('User information', function() {
     expect(user).to.be.an.instanceof(User);
   });
 
-  it('should have an id', function() {
-    expect(user.id).to.equal(37);
-  })
-
   it('should have a name', function() {
     expect(user.name).to.equal('Rupert Cartwright');
   });
