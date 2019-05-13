@@ -5,7 +5,6 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 class User {
   constructor(singleUserData) {
     this.singleUserData = singleUserData;
-    // console.log(this.singleUserData)
   }
 
   returnName() {

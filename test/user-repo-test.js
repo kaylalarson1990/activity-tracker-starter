@@ -25,7 +25,7 @@ describe('UserRepository', function() {
   //   expect(user).to.be.an.instanceOf(User);
   // });
 
-  it('should find a user id', function () {
+  it.skip('should find a user id', function () {
     const testData = {
     "id": 37,
     "name": "Rupert Cartwright",

@@ -1,18 +1,20 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var userSleepData = require('../data/sleepData');
+  userSleepData = require('../data/sleepData');
 }
 
 class Sleep {
-  constructor(id) {
-    this.id = id;
+  constructor(singleUserSleep) {
+    this.singleUserSleep = singleUserSleep;
+    console.log('sleep', this.singleUserSleep)
+    
   }
 
   avgHoursPerDay() {
-    // by id
-    // reduce over array looking at each key of hoursSlept
-    // acc += hours
-    // return acc
-    // set acc to a number
+    let avgHours = this.singleUserSleep.sleepData.reduce((acc, dates) => {
+        acc += dates.hoursSlept / sleepData.length;
+      return acc;
+    }, 0);
+    return Math.floor(avgHours);
   }
 
   totalAvgQuality() {
@@ -23,10 +25,13 @@ class Sleep {
     // set acc to a number
   }
 
-  totalHoursPerDate() {
-    // by id
-    // filter for key of date
-    // return value for key of hoursSlept
+  totalHoursPerDate(day) {
+    let hour = this.singleUserSleep.sleepData.find(dates => {
+      if(dates.date === day) {
+        return dates.hoursSlept;
+      }
+    });
+    return hour.hoursSlept;
   }
 
 // hours per day for the span of 7 days -- I think we could refactor the hours per date to accept condition of one day or a span of days

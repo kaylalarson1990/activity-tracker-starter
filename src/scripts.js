@@ -2,6 +2,7 @@ $(document).ready(() => {
   let singleUserId = randomUser();
   const userRepo = new UserRepository(singleUserId);
   const hydroRepo = new HydrationRepository(singleUserId);
+  const sleepRepo = new SleepRepository(singleUserId);
     loadUserDashboard();
 
   function loadUserDashboard() {
@@ -21,6 +22,6 @@ $(document).ready(() => {
 
   function randomUser() {
     return Math.floor((Math.random() * 50) + 1);
-  }
+  } 
 });
 
