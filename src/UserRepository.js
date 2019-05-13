@@ -7,8 +7,6 @@ class UserRepository {
   constructor(singleUserId) {
     this.allUserData = userData;
     this.newUser = new User(this.makeAUser());
-    // console.log(this.newUser)
-    // this.id = this.newUser.id;
   }
 
   makeAUser(singleUserId) {

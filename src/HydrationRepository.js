@@ -6,13 +6,11 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 class HydrationRepository {
   constructor(singleUserId) {
     this.hydroData = hydrationData;
-    console.log(this.hydroData);
     this.newHydration = new Hydration(this.getUserHydration());
-    // this.id = this.newHydration.userID;
   }
 
   getUserHydration(singleUserId) {
-    return this.hydroData.find(user => user.userID === singleUserId);
+    return this.hydroData.find(user => user.id === singleUserId);
   }
 }
 

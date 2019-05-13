@@ -15,7 +15,8 @@ $(document).ready(() => {
     $('#email').text(userRepo.newUser.singleUserData.email);
     $('#user-step-goal').text(userRepo.newUser.singleUserData.dailyStepGoal);
     $('#avg-step-goal').text(userRepo.avgGoalSteps());
-    $('#h20-intake').text(hydroRepo.newHydration.ouncesPerDate('06/05/2019'));
+    $('#h20-intake').text(hydroRepo.newHydration.ouncesPerDate('07/05/2019'));
+    $('#weekly-h20-intake').text(hydroRepo.newHydration.ouncesPerWeek('07/05/2019'))
   };
 
   function randomUser() {
