@@ -22,7 +22,6 @@ describe('Sleep ', function() {
 
   it('should calculate avg hours slept', function() {
     sleep.avgHoursPerDay();
-    console.log(sleep.avgHoursPerDay())
-    expect(sleep.avgHoursPerDay()).to.equal(15);
+    expect(sleep.avgHoursPerDay()).to.equal(7);
   });
 });
