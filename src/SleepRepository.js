@@ -54,13 +54,13 @@ function weeklyUserSleepQual (day) {
   let ids = [];
   let highQual = [];
 
-  let index = testAllSleep.map(user => {
+  let index = allSleepData.map(user => {
     return user.sleepData.findIndex(night => {
       return night.date === day;
     });
   });
 
-  let findWeek = testAllSleep.map(user => {
+  let findWeek = allSleepData.map(user => {
     return user.sleepData.slice(index[0] + 1, index[0] - 6)
   });
 
@@ -85,6 +85,41 @@ function weeklyUserSleepQual (day) {
   });
   return final;
   }
+
+  findMaxHours (day) {
+    let ids = [];
+    let bestSleepers = [];
+
+    let allUsersSleep = testAllSleep.map(user => {
+      ids.push(user.userID);
+      return user.sleepData;
+    });
+
+    let findDate = testAllSleep.map(user => {
+      return user.sleepData.filter(night => {
+        if(night.date === day) {
+          return night;
+        }
+      }); 
+    });
+
+    let findHours = findDate.map(allNights => {
+      return allNights.map(hours => {
+        return hours.hoursSlept;
+      })
+    })
+
+   let highestHour = findDate.map(user => {
+     return user.forEach((hours, i) => {
+       if(hours.hoursSlept === Math.max(...findHours)) {
+         bestSleepers.push([hours, ids[i]]);
+       }
+     });
+     return highestHour;
+   });
+  }
+
+
 };
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
