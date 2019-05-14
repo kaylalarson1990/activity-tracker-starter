@@ -1,5 +1,5 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  userSleepData = require('../data/sleepData');
+  // userSleepData = require('../data/sleepData');
 }
 
 class Sleep {

@@ -32,7 +32,14 @@ class UserRepository {
     let sortStates = Object.entries(addStates).sort((a, b) => a[1] - b[1]).pop()[0];
     return sortStates;
     }
+
+  returnFullName(id) {
+  if (id === this.allUserDatafind(user => user.id === id))
+      return this.allUserData.name
+      // that parameter will have to accept and operate on an array in the event two users tie for most sleep, etc
   }
+
+}
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = UserRepository;
