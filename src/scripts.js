@@ -11,7 +11,7 @@ $(document).ready(() => {
     });
     
     $('#user-name').text(userRepo.newUser.returnName());
-    $('#name').text(userRepo.newUser.name);
+    $('#name').text(userRepo.newUser.singleUserData.name);
     $('#address').text(userRepo.newUser.singleUserData.address);
     $('#email').text(userRepo.newUser.singleUserData.email);
     $('#user-step-goal').text(userRepo.newUser.singleUserData.dailyStepGoal);
@@ -20,6 +20,7 @@ $(document).ready(() => {
     $('#weekly-h20-intake').text(hydroRepo.newHydration.ouncesPerWeek('07/05/2019'));
     $('#avg-daily-sleep').text(sleepRepo.newSleep.avgHoursPerDay());
     $('#avg-total-sleep').text(sleepRepo.newSleep.totalHoursPerDate('07/05/2019'));
+    $('#weekly-sleep').text(sleepRepo.newSleep.totalHoursPerWeek('07/05/2019'));
   };
 
   function randomUser() {

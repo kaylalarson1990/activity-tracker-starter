@@ -12,12 +12,18 @@ class Sleep {
     return Math.floor(avgHours.reduce((a, b) => a + b) / avgHours.length);
   }
 
+  totalHoursPerWeek(firstDay) {
+    let startInd = this.singleUserSleep.sleepData.findIndex(startDay => startDay.date === firstDay);
+    let weeklySleep = this.singleUserSleep.sleepData.slice(startInd, startInd + 7).reduce((acc, dates) => {
+      acc += dates.hoursSlept;
+      return acc;
+    }, 0);
+    return Math.floor(weeklySleep);
+  }
+
   totalAvgQuality() {
-    // by id
-    // reduce over array looking at each key of sleepQuality
-    // acc += quality divided by length of the array
-    // return acc
-    // set acc to a number
+    let avgQual = this.singleUserSleep.sleepData.map(qual => qual.sleepQuality);
+    return Math.floor(avgQual.reduce((a, b) => a + b) / avgQual.length);
   }
 
   totalHoursPerDate(day) {
@@ -29,12 +35,13 @@ class Sleep {
     return hour.hoursSlept;
   }
 
-// hours per day for the span of 7 days -- I think we could refactor the hours per date to accept condition of one day or a span of days
-
-  qualityPerDate() {
-    // by id
-    // filter for key of date
-    // return value for key of sleepQuality
+  qualityPerDate(qualDay) {
+    let qualityDate = this.singleUserSleep.sleepData.find(dates => {
+      if(dates.date === qualDay) {
+        return dates.sleepQuality;
+      }
+    });
+    return qualityDate.sleepQuality;
   }
 
 // quality per day for a span of 7 days -- same, refactor functionality for quality per day to accept a single date or range
