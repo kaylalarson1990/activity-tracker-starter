@@ -18,7 +18,7 @@ class Hydration {
 
   ouncesPerWeek(firstDay) {
     let startIndex = this.hydroData.hydrationData.findIndex(startDay => startDay.date === firstDay);
-    return this.hydroData.hydrationData.slice(startIndex, startIndex + 7).reduce((acc, dates) => {
+    return this.hydroData.hydrationData.slice(startIndex + 1, startIndex - 6).reduce((acc, dates) => {
           acc += dates.numOunces;
       return acc;
     }, 0);
