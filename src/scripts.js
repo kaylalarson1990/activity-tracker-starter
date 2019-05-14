@@ -1,11 +1,11 @@
 $(document).ready(() => {
-  let singleUserId = randomUser();
-  const userRepo = new UserRepository(singleUserId);
-  const hydroRepo = new HydrationRepository(singleUserId);
-  const sleepRepo = new SleepRepository(singleUserId);
     loadUserDashboard();
 
   function loadUserDashboard() {
+    let singleUserId = randomUser();
+    const userRepo = new UserRepository(singleUserId);
+    const hydroRepo = new HydrationRepository(singleUserId);
+    const sleepRepo = new SleepRepository(singleUserId);
     $('#info-arrow').click(function () {
       $('.user-info-card').toggle();
     });
