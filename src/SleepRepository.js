@@ -9,8 +9,8 @@ class SleepRepository {
     this.newSleep = new Sleep(this.getUserSleep());
   }
 
-  getUserSleep(singleUserId) {
-    return this.allSleepData.find(user => user.id === singleUserId);
+  getUserSleep(userId) {
+    return this.allSleepData.find(user => user.id === userId);
   }
 
   avgAllSleep() {

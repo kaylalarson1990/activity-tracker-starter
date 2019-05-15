@@ -1,10 +1,11 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  // userSleepData = require('../data/sleepData');
+  testsleep = require('../data/testSleep');
 }
 
 class Sleep {
   constructor(singleUserSleep) {
     this.singleUserSleep = singleUserSleep;
+    console.log(this.singleUserSleep.sleepData)
   }
 
   avgHoursPerDay() {
@@ -22,6 +23,7 @@ class Sleep {
   }
 
   totalAvgQuality() {
+    console.log(this.singleUserSleep.sleepData)
     let avgQual = this.singleUserSleep.sleepData.map(qual => qual.sleepQuality);
     return Math.floor(avgQual.reduce((a, b) => a + b) / avgQual.length);
   }
@@ -44,24 +46,8 @@ class Sleep {
     return qualityDate.sleepQuality;
   }
 
-// quality per day for a span of 7 days -- same, refactor functionality for quality per day to accept a single date or range
-
-// custom metric!
 }
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Sleep;
 }
-
-
-
-
-// ******** do these live in UserRepo?
-
-// For all users, the average sleep quality
-
-// Find all users who average a sleep quality greater than 3 for a given week(7 days) - you should be able to calculate this for any week, not just the latest week
-
-// For a given day(identified by the date), find the users who slept the most number of hours(one or more if they tied)
-
-// Make a metric of your own! Document it, calculate it, and display it.

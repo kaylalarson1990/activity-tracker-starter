@@ -8,6 +8,16 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 describe('Sleep ', function() {
   let sleep;
   beforeEach(function() {
+    const testData = {
+    "userID": 37,
+    "sleepData": [
+      {
+        "date": "06/05/2019",
+        "hoursSlept": 6.8,
+        "sleepQuality": 4.2
+      }
+    ]
+  }
     sleep = new Sleep(testSleep);
   });
 
@@ -15,10 +25,9 @@ describe('Sleep ', function() {
     expect(Sleep).to.be.a('function');
   });
 
-  it('should find hours slept', function() {
-    const testDate = "06/05/2019"
-    sleep.totalHoursPerDate(testDate);
-    expect(sleep.totalHoursPerDate(testDate)).to.equal(6.8);
+  it.only('should find hours slept', function() {
+    // sleep.totalHoursPerDate(testDate);
+    expect(sleep.totalHoursPerDate()).to.equal(6.8);
   });
 
   it('should calculate avg hours slept', function() {
