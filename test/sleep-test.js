@@ -1,14 +1,14 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var Sleep = require('../src/Sleep.js');
-  var testData = require('../data/testObj');
+  var testSleep = require('../data/testSleep');
   User = require('../src/User.js')
 }
 
 describe('Sleep ', function() {
   let sleep;
   beforeEach(function() {
-    sleep = new Sleep(testData);
+    sleep = new Sleep(testSleep);
   });
 
   it('should be a function', function() {

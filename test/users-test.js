@@ -1,7 +1,7 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var User = require('../src/User.js');
-  var testData = require('../data/testObj');
+  var testData = require('../data/testData');
 }
 
 describe('User information', function() {

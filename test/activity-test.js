@@ -1,7 +1,8 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var Activity = require('../src/Activity.js');
-  var testUserObj = require('../data/testObj');
+  var userData = require('../data/userData');
+  var testActivity = require('../data/testActivity');
 }
 
 let testUser = {
@@ -16,7 +17,7 @@ let testUser = {
 describe('Activity ', function() {
   let activity;
   beforeEach(function() {
-    activity = new Activity(testUserObj);
+    activity = new Activity(testActivity);
   });
 
   it('should be a function', function () {
@@ -24,14 +25,14 @@ describe('Activity ', function() {
   });
 
   it.skip('should return steps in miles', function() {
-    activity.getMilesPerDate(testUserObj);
-    console.log(activity.getMilesPerDate(testUserObj));
+    activity.getMilesPerDate(testActivity);
+    console.log(activity.getMilesPerDate(testActivity));
     expect(activity.getMilesPerDate()).to.equal();
   });
 
   it('should should return total active minutes for a week', function() {
-    activity.totalMinutesPerWeek(testUserObj);
-    console.log(activity.totalMilesPerWeek(testUserObj));
+    activity.totalMinutesPerWeek(testActivity);
+    console.log(activity.totalMilesPerWeek(testActivity));
     expect(activity.totalMinutesPerWeek()).to.equal();
   })
 });

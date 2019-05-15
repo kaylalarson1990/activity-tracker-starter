@@ -1,14 +1,14 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var Hydration = require('../src/Hydration.js')
-  var testObj = require('../data/testObj');
+  var testHydration = require('../data/testHydration');
   var User = require('../src/User.js');
 }
 
 describe('Hydration ', function() {
   let hydration;
   beforeEach(function() {
-    hydration = new Hydration(testObj);
+    hydration = new Hydration(testHydration);
   });
 
   it('should be a function', function() {

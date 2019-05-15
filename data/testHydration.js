@@ -1,4 +1,4 @@
-const testAllHydrate = [
+const testHydration = [
   {
     "userID": 37,
     "hydrationData": [
@@ -1221,3 +1221,4 @@ const testAllHydrate = [
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = testHydration;
+}

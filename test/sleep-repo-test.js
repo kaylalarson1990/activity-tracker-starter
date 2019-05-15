@@ -3,7 +3,6 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var SleepRepository = require('../src/SleepRepository.js');
   var Sleep = require('../src/Sleep.js');
   var testData = require('../data/testData');
-  var testUserObj = require('../data/testObj');
 }
 
 describe('Sleep Repository ', function() {

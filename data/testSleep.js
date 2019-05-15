@@ -1,4 +1,4 @@
-const testAllActivity = [
+const testSleep = [
   {
     "userID": 37,
     "activityData": [
@@ -1818,4 +1818,5 @@ const testAllActivity = [
 
 
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  module.exports = testActivity;
+  module.exports = testSleep;
+}
