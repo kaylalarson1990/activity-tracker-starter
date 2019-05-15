@@ -1,3 +1,4 @@
+
  if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   sleepData = require('../data/sleepData');
   Sleep = require('./Sleep');

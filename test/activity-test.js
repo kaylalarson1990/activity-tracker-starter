@@ -16,8 +16,8 @@ describe('Activty ', function() {
   });
 
   it('should return steps in miles', function() {
-    activity.getMilesPerDate(testUserObj);
-    console.log(activity.getMilesPerDate())
+    // activity.getMilesPerDate(testUserObj);
+    console.log(activity.getMilesPerDate(testUserObj))
     expect(activity.getMilesPerDate()).to.equal()
   })
 });

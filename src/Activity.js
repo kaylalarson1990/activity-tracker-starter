@@ -12,8 +12,6 @@ class Activity {
     const targetUserData = userData.find(data => {
       return data.id === this.singleUserActivity.userID;
     });
-    console.log(targetUserData)
-    // get value of key numSteps
     return this.singleUserActivity.activityData.map(day => {
       return Math.round((day.numSteps * targetUserData.strideLength) / 5280);
     });
