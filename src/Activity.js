@@ -1,18 +1,22 @@
 if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-  var activityTestData = require('../data/activityData');
+  activityData = require('../data/activityData');
+  userData = require('../data/userData');
 }
 
 class Activity {
-  constructor(id) {
-    this.id = id;
+  constructor(singleUserActivity) {
+    this.singleUserActivity = singleUserActivity;
   }
 
-  getMilesPerDate() {
-    // by id
+  getMilesPerDate(userID) {
+    const targetUserData = userData.find(data => {
+      return data.id === this.singleUserActivity.userID;
+    });
+    console.log(targetUserData)
     // get value of key numSteps
-    // numSteps x userdata's value for strideLength
-    // math is hard
-    // divide returned unit (feet?) by 5280
+    return this.singleUserActivity.activityData.map(day => {
+      return Math.round((day.numSteps * targetUserData.strideLength) / 5280);
+    });
   }
 
   getActiveMinutes() {
@@ -53,6 +57,10 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = Activity;
 }
 
+// const act = new Activity(activityData[0]);
+// act.getMilesPerDate(1)
+
+// console.log('Expected: ', Math.round((7368 * 4.7) / 5280));
 
 // ******** do these live in UserRepo?
 // For all users, the average sleep quality

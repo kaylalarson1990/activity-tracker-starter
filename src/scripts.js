@@ -21,6 +21,7 @@ $(document).ready(() => {
     $('#avg-daily-sleep').text(sleepRepo.newSleep.avgHoursPerDay());
     $('#avg-total-sleep').text(sleepRepo.newSleep.totalHoursPerDate('07/05/2019'));
     $('#weekly-sleep').text(sleepRepo.newSleep.totalHoursPerWeek('07/05/2019'));
+    
   };
 
   function randomUser() {
@@ -48,24 +49,24 @@ $(document).ready(() => {
 //   }
 // }
 
-// function makeCircle(ounces, goal) {
-//   $('#user-water').html(`<div class="single-chart">
-//     <svg viewBox="0 0 36 36" class="circular-chart ${determineColor(waterPercentage(ounces, goal))}">
-//       <path class="circle-bg"
-//         d="M18 2.0845
-//           a 15.9155 15.9155 0 0 1 0 31.831
-//           a 15.9155 15.9155 0 0 1 0 -31.831"
-//       />
-//       <path class="circle"
-//         stroke-dasharray="${waterPercentage(ounces, goal)}, 100"
-//         d="M18 2.0845
-//           a 15.9155 15.9155 0 0 1 0 31.831
-//           a 15.9155 15.9155 0 0 1 0 -31.831"
-//       />
-//       <text x="18" y="20.35" class="percentage">${waterPercentage(ounces, goal)}%</text>
-//     </svg>
-//     <p>You have drank ${ounces} oz's out of your goal of ${goal}</p>
-//     <p>You Are ${waterPercentage(ounces, goal)}% of the way to your Goal!</p>
-//   </div>`)
-// }
+function makeCircle(ounces, goal) {
+  $('#user-water').html(`<div class="single-chart">
+    <svg viewBox="0 0 36 36" class="circular-chart ${determineColor(waterPercentage(ounces, goal))}">
+      <path class="circle-bg"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <path class="circle"
+        stroke-dasharray="${waterPercentage(ounces, goal)}, 100"
+        d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+      />
+      <text x="18" y="20.35" class="percentage">${waterPercentage(ounces, goal)}%</text>
+    </svg>
+    <p>You have drank ${ounces} oz's out of your goal of ${goal}</p>
+    <p>You Are ${waterPercentage(ounces, goal)}% of the way to your Goal!</p>
+  </div>`)
+}
 

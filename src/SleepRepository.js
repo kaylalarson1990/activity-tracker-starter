@@ -36,25 +36,18 @@ weeklyUserSleepQual (day) {
     });
   });
 
-  let findWeek = allSleepData.map(user => {
+  let final = allSleepData.map(user => {
     return user.sleepData.slice(index[0] + 1, index[0] - 6)
-  });
-
-  let allQualWeeks = findWeek.map(user => {
+  }).map(user => {
     return user.map(night => {
    return night.sleepQuality;
     });
-  });
-
-  let letAllAvg = allQualWeeks.map(user => {
+  }).map(user => {
    return user.reduce((acc, qual) => {
      acc += qual;
      return acc;
      }, 0)
-   })
-
-  let final = letAllAvg.forEach((qual, i) =>
-  {
+   }).forEach((qual, i) => {
     if(qual >= 3) {
       highQual.push([qual, ids[i]]);
     }
@@ -66,10 +59,10 @@ weeklyUserSleepQual (day) {
     let ids = [];
     let bestSleepers = [];
 
-    let allUsersSleep = testAllSleep.map(user => {
-      ids.push(user.userID);
-      return user.sleepData;
-    });
+    // let allUsersSleep = testAllSleep.map(user => {
+    //   ids.push(user.userID);
+    //   return user.sleepData;
+    // });
 
     let findDate = testAllSleep.map(user => {
       return user.sleepData.filter(night => {
