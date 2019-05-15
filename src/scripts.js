@@ -28,25 +28,25 @@ $(document).ready(() => {
   } 
 });
 
-$('#populate').click(function(){
-  const userInput = $('#num-ounces');
-  const numOunces = parseInt(userInput.val());
-  const goalInput = $('#goal-ounces').val()
+// $('#populate').click(function(){
+//   const userInput = $('#num-ounces');
+//   const numOunces = parseInt(userInput.val());
+//   const goalInput = $('#goal-ounces').val()
   
-  makeCircle(numOunces, goalInput)
-});
+//   makeCircle(numOunces, goalInput)
+// });
 
-const waterPercentage = (ounces, goal) => parseFloat(ounces / goal * 100).toFixed(2)
+// const waterPercentage = (ounces, goal) => parseFloat(ounces / goal * 100).toFixed(2)
 
-const determineColor = percentage => {
-  if (percentage < 50) {
-    return 'red'
-  } else if (percentage < 80) {
-    return 'orange'
-  } else {
-    return 'green'
-  }
-}
+// const determineColor = percentage => {
+//   if (percentage < 50) {
+//     return 'red'
+//   } else if (percentage < 80) {
+//     return 'orange'
+//   } else {
+//     return 'green'
+//   }
+// }
 
 // function makeCircle(ounces, goal) {
 //   $('#user-water').html(`<div class="single-chart">

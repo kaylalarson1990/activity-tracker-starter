@@ -25,32 +25,8 @@ class SleepRepository {
     }, 0);
     return (allTheSleep / 50).toFixed(2);
   };
-// ^^^returns avg as string, do we need it as a num? test is passing for string
 
-//function for index
-//let index = allSleepData.map(return user => user.sleepData).findIndex(night => return night.date === date)
-
-//function for finding a week with index
-//let findWeek = this.allSleepData.map(user => user.sleepData.slice(index[0] + 1, index[0] - 6))
-
-//findWeek.map(user => return user.sleepData).map(night => return night.sleepQuality)
-
-
-//let letAllAvg = allQualWeeks.map(user => {
-  // user.reduce((acc, qual) => {
-    // acc += qual;
-    // return acc;
-  // }, 0)
-// })
-
-//letAllAvg.forEach((qual, i) =>
-//{
-  //if(qual >= 3) {
-//     highQual.push([qual, ids[i]]);
-//   }
-// })
-
-function weeklyUserSleepQual (day) {
+weeklyUserSleepQual (day) {
   let ids = [];
   let highQual = [];
 
@@ -118,7 +94,6 @@ function weeklyUserSleepQual (day) {
      return highestHour;
    });
   }
-
 
 };
 
