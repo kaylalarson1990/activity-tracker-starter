@@ -2,30 +2,37 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var Hydration = require('../src/Hydration.js')
   var testHydration = require('../data/testHydration');
-  var User = require('../src/User.js');
+  singleHydration = require('../data/singleHydration')
+  // var User = require('../src/User.js');
 }
 
 describe('Hydration ', function() {
   let hydration;
   beforeEach(function() {
-    hydration = new Hydration(testHydration);
+    const testHydro = {
+    "userID": 37,
+    "hydrationData": [
+      {
+        "date": "06/05/2019",
+        "numOunces": 47
+      }
+    ]
+  }
+    hydration = new Hydration(testHydro);
   });
 
   it('should be a function', function() {
     expect(Hydration).to.be.a('function');
   });
 
-  it.skip('should find ounces of water for one date', function() {
-    const testDate = "06/05/2019";
-    hydration.ouncesPerDate(testDate);
-    console.log(hydration.numOunces)
-    expect(hydration.numOunces).to.equal(47);
+  it('should find ounces of water for one date', function() {
+    expect(hydration.ouncesPerDate("06/05/2019")).to.equal(47);
   });
 
-  it.skip('should find ounces of water for one week', function() {
-    const firstDate = "06/05/2019";
-    hydration.ouncesPerWeek(firstDate);
-    expect(hydration.ouncesPerWeek(firstDate)).to.equal(326);
+  it('should find ounces of water for one week', function() {
+    const hydration = new Hydration(singleHydration)
+    hydration.ouncesPerWeek("06/05/2019");
+    expect(hydration.ouncesPerWeek()).to.equal(129);
   });
 
 });

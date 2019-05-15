@@ -5,7 +5,7 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 class Sleep {
   constructor(singleUserSleep) {
     this.singleUserSleep = singleUserSleep;
-    console.log(this.singleUserSleep.sleepData)
+    // console.log('single user sleep', this.singleUserSleep)
   }
 
   avgHoursPerDay() {
