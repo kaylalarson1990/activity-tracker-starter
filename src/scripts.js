@@ -8,7 +8,7 @@ $(document).ready(() => {
     const sleepRepo = new SleepRepository(singleUserId);
     const activityRepo = new ActivityRepository(singleUserId);
     $('#info-arrow').click(function () {
-      $('.user-info-card').toggle();
+      $('.toggle-card').toggle();
     });
     
     $('#user-name').text(userRepo.newUser.returnName());
@@ -22,6 +22,7 @@ $(document).ready(() => {
     $('#avg-daily-sleep').text(sleepRepo.newSleep.avgHoursPerDay());
     $('#avg-total-sleep').text(sleepRepo.newSleep.totalHoursPerDate('07/05/2019'));
     $('#weekly-sleep').text(sleepRepo.newSleep.totalHoursPerWeek('07/05/2019'));
+    $('#user-active-min').text(activityRepo.newActivity.getActiveMinutes('07/05/2019').minutesActive);
     
   };
 
@@ -29,45 +30,4 @@ $(document).ready(() => {
     return Math.floor((Math.random() * 50) + 1);
   } 
 });
-
-// $('#populate').click(function(){
-//   const userInput = $('#num-ounces');
-//   const numOunces = parseInt(userInput.val());
-//   const goalInput = $('#goal-ounces').val()
-  
-//   makeCircle(numOunces, goalInput)
-// });
-
-// const waterPercentage = (ounces, goal) => parseFloat(ounces / goal * 100).toFixed(2)
-
-// const determineColor = percentage => {
-//   if (percentage < 50) {
-//     return 'red'
-//   } else if (percentage < 80) {
-//     return 'orange'
-//   } else {
-//     return 'green'
-//   }
-// }
-
-function makeCircle(ounces, goal) {
-  $('#user-water').html(`<div class="single-chart">
-    <svg viewBox="0 0 36 36" class="circular-chart ${determineColor(waterPercentage(ounces, goal))}">
-      <path class="circle-bg"
-        d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <path class="circle"
-        stroke-dasharray="${waterPercentage(ounces, goal)}, 100"
-        d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <text x="18" y="20.35" class="percentage">${waterPercentage(ounces, goal)}%</text>
-    </svg>
-    <p>You have drank ${ounces} oz's out of your goal of ${goal}</p>
-    <p>You Are ${waterPercentage(ounces, goal)}% of the way to your Goal!</p>
-  </div>`)
-}
 

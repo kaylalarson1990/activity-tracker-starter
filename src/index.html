@@ -22,10 +22,10 @@
       </container>
     </header>
     <container class="toggle" id="info-arrow"><i class="fas fa-cog"></i></container>
-    <container class="user-info-card">
-      <p class="user-info">Name: <span id="name"></span></p>
-      <p class="user-info">Address: <span id="address"></span></p>
-      <p class="user-info">Email: <span id="email"></span></p>
+    <container class="toggle-card user-card">
+      <p class="card-text user-info">Name: <span id="name"></span></p>
+      <p class="card-text user-info">Address: <span id="address"></span></p>
+      <p class="card-text user-info">Email: <span id="email"></span></p>
     </container>
     <div class="flex-wrapper">
     <div class="single-chart" id="user-steps">
@@ -43,45 +43,22 @@
         />
         <text x="18" y="20.35" class="active-minutes percentage">steps</text>
       </svg>
-      <text class="text sleep">Your step goal: <span id='user-step-goal'></span></text>
-      <text class="text sleep">Average FitLit user goal: <span id="avg-step-goal"></span></text>
+      <container class="steps">
+        <text class="text active">Your Active Minutes: <span id='user-active-min' class="text-style"></span> <div class="text-style">minutes</div></text>
+        <text class="text active">Your Step Goal: <span id='user-step-goal' class="text-style"></span></text>
+        <text class="text active">Average FitLit user goal: <span id="avg-step-goal" class="text-style"></span></text>
+      </container>
     </div>
-    <div class="single-chart">
-      <svg viewBox="0 0 36 36" class="circular-chart green">
-        <path class="circle-bg"
-          d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path class="circle"
-          stroke-dasharray="60, 100"
-          d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <text x="18" y="20.35" class="total-steps percentage">h2o</text>
-      </svg>
-      <text class="text active-minutes">Your water intake: <span id="h20-intake"></span></text>
-      <text class="text weekly-active-minutes">Your weekly water intake: <span id="weekly-h20-intake"></span></text>
-    </div>
-    <div class="single-chart">
-      <svg viewBox="0 0 36 36" class="circular-chart blue">
-        <path class="circle-bg"
-          d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <path class="circle"
-          stroke-dasharray="10, 100"
-          d="M18 2.0845
-            a 15.9155 15.9155 0 0 1 0 31.831
-            a 15.9155 15.9155 0 0 1 0 -31.831"
-        />
-        <text x="18" y="20.35" class="sleep-hours percentage">10%</text>
-      </svg>
-      <text class="text active-minutes">Your daily hours slept: <span id="avg-daily-sleep"></span></text>
-      <text class="text weekly-active-minutes">Your average hours slept: <span id="avg-total-sleep"></span></text>
-      <text class="text weekly-active-minutes">Your weekly hours: <span id="weekly-sleep"></span></text>
+    <container class="user-card">
+      <p class="card-text water-intake">Your water intake: <span id="h20-intake"></span></p>
+      <p class="card-text weekly-water-intake">Your weekly water intake: <span id="weekly-h20-intake"></span></p>
+    </container>
+
+    <container class="user-card">
+      <p class="card-text active-minutes">Your daily hours slept: <span id="avg-daily-sleep"></span></p>
+      <p class="card-text avg-stotal-sleep">Your average hours slept: <span id="avg-total-sleep"></span></p>
+      <p class="card-text weekly-sleep">Your weekly hours: <span id="weekly-sleep"></span></p>
+    </container>
     </div>
   </div>
     <script type="text/javascript" src="../data/activityData.js"></script>

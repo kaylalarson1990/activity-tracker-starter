@@ -20,24 +20,11 @@ describe('UserRepository', function() {
     expect(userRepo).to.be.an.instanceof(UserRepository);
   });
 
-  // it('should make a new user', function () {
-  //   let user = new User(userRepo.makeAUser);
-  //   expect(user).to.be.an.instanceOf(User);
-  // });
+  it('should make a new user', function () {
+    let user = new User(userRepo.makeAUser);
+    expect(user).to.be.an.instanceOf(User);
+  });
 
-  it.skip('should find a user id', function () {
-    const testData = {
-    "id": 37,
-    "name": "Rupert Cartwright",
-    "address": "765 Camden Mountains, Homenickhaven ME 37933",
-    "email": "Raphael80@hotmail.com",
-    "strideLength": 4.9,
-    "dailyStepGoal": 10000
-  }
-    let user = new User(testData);
-    userRepo.makeAUser();
-    expect(user.id).to.equal(37);
-  })
 
   it('should average all users goal steps', function() {
     let steps = userRepo.avgGoalSteps();

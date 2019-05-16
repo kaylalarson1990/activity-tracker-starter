@@ -14,22 +14,12 @@ class ActivityRepository {
   }
 
   avgStairsClimbed() {
-    let allUsers = this.allActivityData.map(user => user.activityData).map(user => user.map(date => date.flightsOfStairs)).map(user => {
-      return user.reduce((acc, specificDate) => {
-        acc += (specificDate / 100);
-        return acc;
-      }, 0);
-    }).reduce((acc, avg) => {
-      acc += avg;
-      return acc;
+    let allUsers = this.allActivityData.reduce((acc, user) => {
+      let findDay = user.allActivityData.find(day => day.date === date);
+      acc = acc + findDay.flightsOfStairs;
+      return acc
     }, 0);
-    return (allUsers / 50);
-  }
-
-  allStepsPerDate() {
-    
-
-
+    return allUsers / this.allActivityData.length;
   }
 
   allActiveMinutesPerDate() {
