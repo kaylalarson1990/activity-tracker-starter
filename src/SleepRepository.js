@@ -26,34 +26,32 @@ class SleepRepository {
     return (allTheSleep / 50).toFixed(2);
   };
 
-weeklyUserSleepQual (day) {
-  let ids = [];
-  let highQual = [];
+  weeklyUserSleepQual (day) {
+    let ids = [];
+    let highQual = [];
 
-  let index = allSleepData.map(user => {
-    return user.sleepData.findIndex(night => {
-      return night.date === day;
+    let index = allSleepData.map(user => {
+      return user.sleepData.findIndex(night => {
+        return night.date === day;
+      });
     });
-  });
 
-  let final = allSleepData.map(user => {
-    return user.sleepData.slice(index[0] + 1, index[0] - 6)
-  }).map(user => {
-    return user.map(night => {
-   return night.sleepQuality;
-    });
-  }).map(user => {
-   return user.reduce((acc, qual) => {
-     acc += qual;
-     return acc;
-     }, 0)
-   }).forEach((qual, i) => {
-    if(qual >= 3) {
-      highQual.push([qual, ids[i]]);
+    return final = allSleepData.map(user => {
+      return user.sleepData.slice(index[0] + 1, index[0] - 6)}).map(user => {
+        return user.map(night => {
+          return night.sleepQuality;
+        });
+      }).map(user => {
+        return user.reduce((acc, qual) => {
+          acc += qual;
+          return acc;
+        }, 0)
+      }).forEach((qual, i) => {
+        if(qual >= 3) {
+          highQual.push([qual, ids[i]]);
+        }
+      });
     }
-  });
-  return final;
-  }
 
   findMaxHours (day) {
     let ids = [];
