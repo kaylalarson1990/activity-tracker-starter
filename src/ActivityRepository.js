@@ -27,13 +27,13 @@ class ActivityRepository {
   }
 
   avgUserSteps(startDate) {
-   let usersSteps = this.allActivityData.map(el => el.activityData)
+   let usersSteps = this.allActivityData.map(user => user.activityData);
    let allSteps = [];
 
-    usersSteps.map(el =>
-        el.filter(el => {
-        if(el.date === startDate) {
-        allSteps.push(el.numSteps);
+    usersSteps.map(user =>
+        user.filter(user => {
+        if(user.date === startDate) {
+        allSteps.push(user.numSteps);
         }
     }));
 
@@ -41,11 +41,26 @@ class ActivityRepository {
     return Math.round((acc += avg) / allSteps.length);
    });
 
-   return result
+   return result;
 
   }
 
-  allActiveMinutesPerDate() {
+  allActiveMinutesPerDate(day) {
+    let usersActivity = this.allActivityData.map(user => user.activityData);
+    let allMins = [];
+
+    usersActivity.map(user =>
+        user.filter(user => {
+        if(user.date === startDate) {
+        allMins.push(user.minutesActive);
+        }
+    }));
+
+   let result = allMins.reduce((acc, avg) => {
+    return Math.round((acc += avg) / allMins.length);
+   });
+
+   return result;
 
     
   }
