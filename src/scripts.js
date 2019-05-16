@@ -6,6 +6,7 @@ $(document).ready(() => {
     const userRepo = new UserRepository(singleUserId);
     const hydroRepo = new HydrationRepository(singleUserId);
     const sleepRepo = new SleepRepository(singleUserId);
+    const activityRepo = new ActivityRepository(singleUserId);
     $('#info-arrow').click(function () {
       $('.user-info-card').toggle();
     });

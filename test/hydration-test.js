@@ -30,7 +30,7 @@ describe('Hydration ', function() {
   });
 
   it('should find ounces of water for one week', function() {
-    const hydration = new Hydration(singleHydration)
+    let hydration = new Hydration(singleHydration)
     hydration.ouncesPerWeek("06/05/2019");
     expect(hydration.ouncesPerWeek()).to.equal(129);
   });

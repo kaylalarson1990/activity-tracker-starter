@@ -2,7 +2,7 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var expect = require('chai').expect;
   var Activity = require('../src/Activity.js');
   var userData = require('../data/userData');
-  var testActivity = require('../data/testActivity');
+  var singleActivity = require('../data/singleActivity')
 }
 
 let testUser = {
@@ -17,23 +17,22 @@ let testUser = {
 describe('Activity ', function() {
   let activity;
   beforeEach(function() {
-    activity = new Activity(testActivity);
+    activity = new Activity(singleActivity);
   });
 
   it('should be a function', function () {
     expect(Activity).to.be.a('function');
   });
 
-  it.skip('should return steps in miles', function() {
-    activity.getMilesPerDate(testActivity);
-    console.log(activity.getMilesPerDate(testActivity));
+  it('should return steps in miles', function() {
+    activity.getMilesPerDate("06/05/2019")
     expect(activity.getMilesPerDate()).to.equal();
   });
 
   it('should should return total active minutes for a week', function() {
-    activity.totalMinutesPerWeek(testActivity);
-    console.log(activity.totalMilesPerWeek(testActivity));
-    expect(activity.totalMinutesPerWeek()).to.equal();
+    let activity = new Activity(singleActivity)
+    activity.totalMinutesPerWeek("06/05/2019");
+    expect(activity.totalMinutesPerWeek()).to.equal(367);
   })
 });
 

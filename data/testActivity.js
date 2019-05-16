@@ -7,7 +7,7 @@ const testActivity = [
         "numSteps": 7393,
         "minutesActive": 86,
         "flightsOfStairs": 11
-      },
+      }, 
       {
         "date": "07/05/2019",
         "numSteps": 8775,
