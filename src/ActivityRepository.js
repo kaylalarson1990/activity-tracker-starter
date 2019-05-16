@@ -27,42 +27,30 @@ class ActivityRepository {
   }
 
   avgUserSteps(startDate) {
-   let usersSteps = this.allActivityData.map(user => user.activityData);
-   let allSteps = [];
-
-    usersSteps.map(user =>
-        user.filter(user => {
-        if(user.date === startDate) {
-        allSteps.push(user.numSteps);
-        }
-    }));
-
-   let result = allSteps.reduce((acc, avg) => {
-    return Math.round((acc += avg) / allSteps.length);
-   });
-
-   return result;
-
+    let usersSteps = this.allActivityData.map(user => user.activityData).map(user => user.map(date => date.numSteps)).map(user => {
+      return user.reduce((acc, specificDate) => {
+        acc += (specificDate / 100);
+        return acc;
+      }, 0);
+    }).reduce((acc, avg) => {
+      acc += avg;
+      return acc;
+    }, 0);
+    return (Math.round(usersSteps / 50));
   }
 
   allActiveMinutesPerDate(day) {
-    let usersActivity = this.allActivityData.map(user => user.activityData);
-    let allMins = [];
 
-    usersActivity.map(user =>
-        user.filter(user => {
-        if(user.date === startDate) {
-        allMins.push(user.minutesActive);
-        }
-    }));
-
-   let result = allMins.reduce((acc, avg) => {
-    return Math.round((acc += avg) / allMins.length);
-   });
-
-   return result;
-
-    
+    let usersActivity = this.allActivityData.map(user => user.activityData).map(user => user.map(date => date.minutesActive)).map(user => {
+      return user.reduce((acc, specificDate) => {
+        acc += (specificDate / 100);
+        return acc;
+      }, 0);
+    }).reduce((acc, avg) => {
+      acc += avg;
+      return acc;
+    }, 0);
+    return (Math.round(usersActivity / 50));  
   }
 
 

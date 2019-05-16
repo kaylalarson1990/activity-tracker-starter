@@ -24,7 +24,8 @@ $(document).ready(() => {
     $('#weekly-sleep').text(sleepRepo.newSleep.totalHoursPerWeek('07/05/2019'));
     $('#user-active-min').text(activityRepo.newActivity.getActiveMinutes('07/05/2019').minutesActive);
     $('#stairs-climbed').text(activityRepo.avgStairsClimbed());
-    $('#all-users-avg-steps').text(activityRepo.avgUserSteps('07/05/2019'))
+    $('#all-users-avg-steps').text(activityRepo.avgUserSteps('07/05/2019'));
+    $('#all-users-avg-mins').text(activityRepo.allActiveMinutesPerDate('07/05/2019'));
     
   };
 
