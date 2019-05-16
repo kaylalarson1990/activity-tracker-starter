@@ -23,6 +23,7 @@ $(document).ready(() => {
     $('#avg-total-sleep').text(sleepRepo.newSleep.totalHoursPerDate('07/05/2019'));
     $('#weekly-sleep').text(sleepRepo.newSleep.totalHoursPerWeek('07/05/2019'));
     $('#user-active-min').text(activityRepo.newActivity.getActiveMinutes('07/05/2019').minutesActive);
+    $('#stairs-climbed').text(activityRepo.avgStairsClimbed())
     
   };
 
