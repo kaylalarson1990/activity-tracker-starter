@@ -5,7 +5,6 @@ if(typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 class Sleep {
   constructor(singleUserSleep) {
     this.singleUserSleep = singleUserSleep;
-    // console.log('single user sleep', this.singleUserSleep)
   }
 
   avgHoursPerDay() {
@@ -23,7 +22,6 @@ class Sleep {
   }
 
   totalAvgQuality() {
-    console.log(this.singleUserSleep.sleepData)
     let avgQual = this.singleUserSleep.sleepData.map(qual => qual.sleepQuality);
     return Math.floor(avgQual.reduce((a, b) => a + b) / avgQual.length);
   }

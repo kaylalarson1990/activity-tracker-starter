@@ -15,10 +15,6 @@ describe('Sleep Repository ', function() {
     expect(SleepRepository).to.be.a('function');
   });
 
-  it.skip('should get a user id', function() {
-    expect(sleepRepo.getUserSleep()).to.equal();
-  });
-
   it('should return average sleep quality for all users', function() {
     sleepRepo.avgAllSleep(testData);
     expect(sleepRepo.avgAllSleep()).to.equal('3.02')

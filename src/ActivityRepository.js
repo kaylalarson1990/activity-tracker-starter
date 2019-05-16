@@ -23,12 +23,25 @@ class ActivityRepository {
       acc += avg;
       return acc;
     }, 0);
-    return (allUsers / 50);
+    return (Math.round(allUsers / 50));
   }
 
-  allStepsPerDate() {
-    
+  avgUserSteps(startDate) {
+   let usersSteps = this.allActivityData.map(el => el.activityData)
+   let allSteps = [];
 
+    usersSteps.map(el =>
+        el.filter(el => {
+        if(el.date === startDate) {
+        allSteps.push(el.numSteps);
+        }
+    }));
+
+   let result = allSteps.reduce((acc, avg) => {
+    return Math.round((acc += avg) / allSteps.length);
+   });
+
+   return result
 
   }
 
